@@ -45,6 +45,18 @@ const initialState: EmployeeState = {
       salary: 600000,
       hireDate: '2025-12-12',
       status: 'active'
+    },
+    {
+      id: '4',
+      firstName: 'John',
+      lastName: 'Sinha',
+      email: 'JohnSinha@volovo.com',
+      phone: '8600820678',
+      department: 'IT',
+      position: 'Junior Software Engineer Javascript',
+      salary: 400000,
+      hireDate: '2025-12-12',
+      status: 'active'
     }
   ],
   loading: false,
