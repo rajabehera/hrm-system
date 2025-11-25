@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hrm-system/static/css/main.e6c13ad2.css",
+    "main.js": "/hrm-system/static/js/main.97a89d58.js",
+    "index.html": "/hrm-system/index.html",
+    "main.e6c13ad2.css.map": "/hrm-system/static/css/main.e6c13ad2.css.map",
+    "main.97a89d58.js.map": "/hrm-system/static/js/main.97a89d58.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.97a89d58.js"
+  ]
+}
