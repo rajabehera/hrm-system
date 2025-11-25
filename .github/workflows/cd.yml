@@ -1,0 +1,48 @@
+# .github/workflows/cd.yml
+name: CD Pipeline - Deploy to GitHub Pages
+
+# Trigger only on push to main branch
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: # Allows manual trigger from Actions tab
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Required to push to gh-pages branch
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+    
+    - name: Install Dependencies
+      run: npm ci
+    
+    - name: Build Application
+      run: npm run build
+      env:
+        CI: false  # Treat warnings as warnings, not errors
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        commit_message: 'Deploy: ${{ github.event.head_commit.message }}'
+    
+    - name: Deployment Success Message
+      run: |
+        echo "✅ Deployment successful!"
+        echo "🌐 Your app is live at: https://${{ github.repository_owner }}.github.io/hrm-system"
