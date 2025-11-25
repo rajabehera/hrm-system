@@ -38,7 +38,7 @@ const initialState: EmployeeState = {
       id: '3',
       firstName: 'Raja',
       lastName: 'Behera',
-      email: 'rajabehera@volovo.com',
+      email: 'rajabehera@volvo.com',
       phone: '8600820649',
       department: 'IT',
       position: 'Senior Software Engineer Javascript',
@@ -50,7 +50,7 @@ const initialState: EmployeeState = {
       id: '4',
       firstName: 'John',
       lastName: 'Sinha',
-      email: 'JohnSinha@volovo.com',
+      email: 'JohnSinha@volvo.com',
       phone: '8600820678',
       department: 'IT',
       position: 'Junior Software Engineer Javascript',
@@ -87,6 +87,13 @@ const employeeSlice = createSlice({
     },
   },
 });
+
+// Selectors
+export const selectAllEmployees = (state: { employees: EmployeeState }) => 
+  state.employees.employees;
+
+export const selectActiveEmployees = (state: { employees: EmployeeState }) => 
+  state.employees.employees.filter(emp => emp.status === 'active');
 
 export const { addEmployee, updateEmployee, deleteEmployee, setLoading, setError } = employeeSlice.actions;
 export default employeeSlice.reducer;
