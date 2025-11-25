@@ -1,8 +1,8 @@
 {
-  "name": "hrm-react-redux",
+  "name": "hrm-system",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://rajabehera.github.io/hrm-react-redux",
+  "homepage": "https://rajabehera.github.io/hrm-system",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
