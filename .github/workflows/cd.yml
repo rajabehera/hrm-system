@@ -45,4 +45,4 @@ jobs:
     - name: Deployment Success Message
       run: |
         echo "✅ Deployment successful!"
-        echo "🌐 Your app is live at: https://${{ github.repository_owner }}.github.io/hrm-system"
+        echo "🌐 Your app is live at: https://${{ github.repository_owner }}.github.io/hrm-react-redux"
