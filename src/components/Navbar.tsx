@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               ...(currentPage === item.id ? activeMenuItemStyle : {})
             }}
           >
-            <span style={{ marginRight: '8px' }}>{item.icon}</span>
+           
             {item.label.replace(/^.\s/, '')}
           </button>
         ))}
