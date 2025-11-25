@@ -24,18 +24,6 @@ const initialState: EmployeeState = {
     },
     {
       id: '2',
-      firstName: 'Jane',
-      lastName: 'Smith',
-      email: 'jane.smith@company.com',
-      phone: '+1234567891',
-      department: 'Marketing',
-      position: 'Marketing Manager',
-      salary: 75000,
-      hireDate: '2021-06-20',
-      status: 'active'
-    },
-    {
-      id: '3',
       firstName: 'Bob',
       lastName: 'Johnson',
       email: 'bob.johnson@company.com',
@@ -47,7 +35,7 @@ const initialState: EmployeeState = {
       status: 'on-leave'
     },
     {
-      id: '4',
+      id: '3',
       firstName: 'Raja',
       lastName: 'Behera',
       email: 'rajabehera@volovo.com',
