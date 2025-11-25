@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/hrm-react-redux/static/css/main.e6c13ad2.css",
-    "main.js": "/hrm-react-redux/static/js/main.97a89d58.js",
-    "index.html": "/hrm-react-redux/index.html",
-    "main.e6c13ad2.css.map": "/hrm-react-redux/static/css/main.e6c13ad2.css.map",
-    "main.97a89d58.js.map": "/hrm-react-redux/static/js/main.97a89d58.js.map"
+    "main.css": "/hrm-system/static/css/main.e6c13ad2.css",
+    "main.js": "/hrm-system/static/js/main.97a89d58.js",
+    "index.html": "/hrm-system/index.html",
+    "main.e6c13ad2.css.map": "/hrm-system/static/css/main.e6c13ad2.css.map",
+    "main.97a89d58.js.map": "/hrm-system/static/js/main.97a89d58.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
