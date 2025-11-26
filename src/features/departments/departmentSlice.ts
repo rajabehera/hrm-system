@@ -41,18 +41,30 @@ const departmentSlice = createSlice({
 export const selectDepartmentStats = (state: { departments: DepartmentState }) => {
   const departments = state.departments.departments;
   
-  return departments.map(dept => ({
-    id: dept.id,
-    name: dept.name,
-    employeeCount: dept.employeeCount,
-    budget: dept.budget,
-    location: dept.location,
-    status: dept.status,
-    description: dept.description,
-    // Calculate budget per employee
-    budgetPerEmployee: dept.employeeCount > 0 ? dept.budget / dept.employeeCount : 0,
-    // Add any other calculated stats you need
-  }));
+  // Find largest department by employee count
+  const largestDepartment = departments.length > 0
+    ? departments.reduce((largest, dept) => 
+        dept.employeeCount > largest.employeeCount ? dept : largest
+      )
+    : null;
+  
+  const totalEmployees = departments.reduce((sum, dept) => sum + dept.employeeCount, 0);
+  
+  return {
+    totalDepartments: departments.length,
+    totalEmployees,
+    totalBudget: departments.reduce((sum, dept) => sum + dept.budget, 0),
+    activeDepartments: departments.filter(dept => dept.status === 'active').length,
+    inactiveDepartments: departments.filter(dept => dept.status === 'inactive').length,
+    archivedDepartments: departments.filter(dept => dept.status === 'archived').length,
+    averageBudgetPerEmployee: totalEmployees > 0 
+      ? departments.reduce((sum, dept) => sum + dept.budget, 0) / totalEmployees
+      : 0,
+    averageEmployeesPerDept: departments.length > 0
+      ? totalEmployees / departments.length
+      : 0,
+    largestDepartment
+  };
 };
 
 export const selectActiveDepartments = (state: { departments: DepartmentState }) =>

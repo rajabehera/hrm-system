@@ -23,3 +23,13 @@ export interface EmployeeFormData {
   hireDate: string;
   status: 'active' | 'inactive' | 'on-leave';
 }
+export interface Department {
+  id: string;
+  name: string;
+  description: string;
+  headOfDepartment?: string;
+  budget: number;
+  employeeCount: number;
+  location: string;
+  createdAt: string;
+}

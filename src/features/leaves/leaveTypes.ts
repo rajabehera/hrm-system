@@ -24,13 +24,13 @@ export interface LeaveRequest {
   leaveType: LeaveType;
   startDate: string;
   endDate: string;
+  numberOfDays: number;
   reason: string;
   status: LeaveStatus;
   appliedOn: string;
   reviewedBy?: string;
   reviewedOn?: string;
   reviewComments?: string;
-  numberOfDays: number;
 }
 
 export interface LeaveState {

@@ -4,7 +4,7 @@ import { useAppSelector } from '../../app/hooks';
 import { selectAllEmployees, selectActiveEmployees } from '../employees/employeeSlice';
 import { selectDepartmentStats } from '../departments/departmentSlice';
 import { selectPendingLeaves, selectLeaveStats  } from '../leaves/leaveSlice';
-// import { Department } from '../employees/employeeTypes';
+
 
 const Dashboard: React.FC = () => {
   const employees = useAppSelector(selectAllEmployees);
@@ -38,13 +38,13 @@ const Dashboard: React.FC = () => {
           color="#2196F3"
           subtitle={`${activeEmployees.length} active`}
         />
-        {/* <StatCard
+        <StatCard
           title="Departments"
           value={deptStats.totalDepartments}
           icon="🏢"
           color="#4CAF50"
           subtitle={`$${(deptStats.totalBudget / 1000000).toFixed(1)}M budget`}
-        /> */}
+        />
         <StatCard
           title="Leave Requests"
           value={leaveStats.total}
@@ -103,15 +103,15 @@ const Dashboard: React.FC = () => {
           </div>
           <div style={leaveStatusCard}>
             <div style={{ fontSize: '14px', color: '#666', marginBottom: '5px' }}>Total Days</div>
-            {/* <div style={{ fontSize: '28px', fontWeight: 'bold', color: '#2196F3' }}>
-              {leaveStats.totalDays}
-            </div> */}
+            <div style={{ fontSize: '28px', fontWeight: 'bold', color: '#2196F3' }}>
+              {leaveStats.total}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Quick Actions */}
-      {/* <div style={{ marginTop: '30px' }}>
+      <div style={{ marginTop: '30px' }}>
         <h2 style={{ marginBottom: '15px' }}>Quick Stats</h2>
         <div style={infoBoxStyle}>
           <div style={infoItem}>
@@ -126,10 +126,10 @@ const Dashboard: React.FC = () => {
           </div>
           <div style={infoItem}>
             <span style={infoLabel}>Total Approved Leave Days:</span>
-            <span style={infoValue}>{leaveStats.totalDays} days</span>
+            <span style={infoValue}>{leaveStats.total} days</span>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

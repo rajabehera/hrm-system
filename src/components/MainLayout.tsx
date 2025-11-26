@@ -139,9 +139,9 @@ const MainLayout: React.FC = () => {
         />
       )}
 
-      {/* {showLeaveForm && (
+      {showLeaveForm && (
          <LeaveRequestForm onClose={() => setShowLeaveForm(false)} />
-      )} */}
+      )}
     </div>
   );
 };
